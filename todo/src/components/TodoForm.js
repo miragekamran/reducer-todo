@@ -27,7 +27,7 @@ export default function TodoForm(props) {
 
   const cleared = (event) => {
     event.preventDefault();
-    dispatch({ type: "CLEAR_COMPLETED" });
+    dispatch({ type: "CLEAR" });
   };
 
   return (
