@@ -6,7 +6,7 @@ export default function TodoList(props) {
 
   return (
     <div>
-      {props.todo.map((item) => {
+      {props.todo.map((item) => (
         <li
           className={`todo${item.done ? " done" : ""}`}
           key={item.id}
@@ -14,8 +14,8 @@ export default function TodoList(props) {
         >
           {item.name} | added:{" "}
           {moment(item.id).format("MMMM Do YYYY, h:mm:ss a")}
-        </li>;
-      })}
+        </li>
+      ))}
       {props.todo[0] ? (
         <button className="clear-btn" onClick={props.clear}>
           Clear List

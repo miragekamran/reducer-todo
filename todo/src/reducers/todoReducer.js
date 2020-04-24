@@ -28,10 +28,17 @@ export const todoReducer = (state, action) => {
         todoItems: state.todoItems.map((item) => {
           if (item.id === action.payload) {
             return { ...item, dond: !item.done };
-          }else{
-              return item;
+          } else {
+            return item;
           }
         }),
       };
+    case "CLEAR_COMPLETED":
+      return {
+        ...state,
+        todoItems: state.todoItems.filter((item) => !item.done),
+      };
+    default:
+      return state;
   }
 };
