@@ -12,8 +12,9 @@ export default function TodoList(props) {
           key={item.id}
           onClick={() => props.toggle(item.id)}
         >
-          {item.name} | added:{" "}
-          {moment(item.id).format("MMMM Do YYYY, h:mm:ss a")}
+          {item.name} ---- added on {moment(item.id).format("MMMM Do YYYY, ")}{" "}
+          at
+          {moment(item.id).format(" h:mm:ss a")}
         </li>
       ))}
       {props.todo[0] ? (
